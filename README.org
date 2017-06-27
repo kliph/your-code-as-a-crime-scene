@@ -1,2 +1,16 @@
 * Your Code as a Crime Scene Notes
 ** Chapter 3
+*** .mailmap files
+Used for handling Authors with name changes in git repos:
+
+[[https://stacktoheap.com/blog/2013/01/06/using-mailmap-to-fix-authors-list-in-git/]]
+*** Working git commands
+#+BEGIN_SRC sh
+  git checkout `git rev-list --max-count=1 --before="2013-12-01" master`
+
+
+  git log --numstat
+
+
+  git log --pretty=format:'[%h] %an %ad %s ' --date=short --numstat --before=2013-12-01
+#+END_SRC
