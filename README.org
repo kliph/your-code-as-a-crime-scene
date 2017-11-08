@@ -1,4 +1,22 @@
 * Your Code as a Crime Scene Notes
+** Code Maat repo
+#+BEGIN_SRC sh
+  cd ~/projects/code-maat/
+
+#+END_SRC
+
+Build with
+
+#+BEGIN_SRC sh
+  lein uberjar
+#+END_SRC
+
+Run with
+
+#+BEGIN_SRC sh
+  java -jar code-maat-1.1-SNAPSHOT-standalone.jar -l logfile.log --version-control git
+
+#+END_SRC
 ** Chapter 3
 *** .mailmap files
 Used for handling Authors with name changes in git repos:
@@ -12,5 +30,5 @@ Used for handling Authors with name changes in git repos:
   git log --numstat
 
 
-  git log --pretty=format:'[%h] %an %ad %s ' --date=short --numstat --before=2013-12-01
+  git log --pretty=format:'[%h] %an %ad %s ' --date=short --numstat --before=2013-12-01 > maat_evo.log
 #+END_SRC
