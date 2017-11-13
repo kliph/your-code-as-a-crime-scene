@@ -39,8 +39,8 @@ Used for handling Authors with name changes in git repos:
 #+END_SRC
 *** Complexity analysis
 Measuring lines of code is a poor measure of complexity, Oram &
-Wilson, 2010 _Making Software: What Really Works and Why We Believe
-It_
+Wilson, 2010 /Making Software: What Really Works and Why We Believe
+It/
 
 #+BEGIN_SRC sh
 
