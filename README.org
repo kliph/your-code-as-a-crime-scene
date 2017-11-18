@@ -33,6 +33,10 @@ Used for handling Authors with name changes in git repos:
   git log --pretty=format:'[%h] %an %ad %s ' --date=short --numstat --before=2013-12-01 > maat_evo.log
 #+END_SRC
 *** Revisions analysis
+- =number-of-entities= :: the number of "modules in the system"
+- =number-of-entities-changed= :: the number of times "different
+     modules in the system have been changed"
+
 #+BEGIN_SRC sh
   ./script/maat -l maat_evo.log -c git -a revisions entity,n-revs
 
