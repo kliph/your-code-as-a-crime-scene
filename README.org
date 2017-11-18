@@ -49,6 +49,14 @@ It/
 #+BEGIN_SRC sh
   ./script/maat -l maat_evo.log -c git -a revisions > maat_freqs.csv
 
-  cloc ../code-maat/ --by-file --csv --quiet --report-file=maat_lines.csv
+  cd ../code-maat/
+  cloc ./ --by-file --csv --quiet --report-file=~/projects/your-code-as-a-crime-scene/maat_lines.csv
+  cd -
+#+END_SRC
+*** Merging the data complexity and change frequency data
+
+#+BEGIN_SRC sh
+  python ~/projects/maat-scripts/merge/merge_comp_freqs.py maat_freqs.csv maat_lines.csv
 
 #+END_SRC
+** Chapter 4
