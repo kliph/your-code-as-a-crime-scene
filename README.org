@@ -24,7 +24,7 @@ Used for handling Authors with name changes in git repos:
 [[https://stacktoheap.com/blog/2013/01/06/using-mailmap-to-fix-authors-list-in-git/]]
 *** Working git commands
 #+BEGIN_SRC sh
-  git checkout `git rev-list --max-count=1 --before="2013-12-01" master`
+  git checkout $(git rev-list --max-count=1 --before="2013-12-01" master)
 
 
   git log --numstat
@@ -60,3 +60,34 @@ It/
 
 #+END_SRC
 ** Chapter 4
+Using https://github.com/hibernate/hibernate-orm.
+
+#+BEGIN_SRC sh
+  cd ~/projects/hibernate-orm/
+  git checkout $(git rev-list -n 1 --before="2013-09-05" master)
+
+  git log --pretty=format:'[%h] %an %ad %s' --date=short \
+      --numstat --before=2013-09-05 --after=2012-01-01 > hib_evo.log
+
+  mv hib_evo.log ~/projects/your-code-as-a-crime-scene/hib_evo.log
+  cd -
+
+  ./script/maat -l hib_evo.log -c git -a summary
+#+END_SRC
+*** Choosing a time frame
+#+BEGIN_QUOTE
+On my projects I choose the following timeframes
+
+- Between releases :: Compare hotspots between releases to evaluate
+     your long-term improvements.
+- Over iterations :: If you work iteratively, measure between each
+     iteration.  This lets you spot code that starts to grow into
+     hotspots early.
+- Around significant events :: Define the temporal period around
+     significant events, such as reorganizations of code or
+     personnel.  When you make large redesigns or change the way you
+     work, it will reflect in the code.
+#+END_QUOTE
+
+- Start with a long period :: 1 to 2 years will allow you to spot
+     long-term trends.
