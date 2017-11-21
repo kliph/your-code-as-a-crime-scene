@@ -77,6 +77,7 @@ Using https://github.com/hibernate/hibernate-orm.
   cd -
 
   ./script/maat -l hib_evo.log -c git -a summary
+
 #+END_SRC
 *** Choosing a time frame
 #+BEGIN_QUOTE
@@ -95,3 +96,36 @@ On my projects I choose the following timeframes
 
 - Start with a long period :: 1 to 2 years will allow you to spot
      long-term trends.
+*** Hibernate complexity
+
+#+BEGIN_SRC sh
+
+  cd ~/projects/hibernate-orm/
+  cloc ./ --by-file --csv --quiet --report-file=~/projects/your-code-as-a-crime-scene/hib_lines.csv
+  cd -
+
+#+END_SRC
+*** Hibernate change frequencies
+
+#+BEGIN_SRC sh
+  ./script/maat -l hib_evo.log -c git -a revisions > hib_freqs.csv
+
+#+END_SRC
+*** Merging the hibernate data
+
+#+BEGIN_SRC sh
+  python ~/projects/maat-scripts/merge/merge_comp_freqs.py hib_freqs.csv hib_lines.csv
+
+#+END_SRC
+*** Visualization samples directory
+
+#+BEGIN_SRC sh
+
+  ~/projects/code-maat-samples
+#+END_SRC
+*** Serving the goods
+#+BEGIN_SRC sh
+  python -m SimpleHTTPServer 8888
+  open http://localhost:8888/hibernate/hibzoomable.html
+
+#+END_SRC
