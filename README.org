@@ -164,3 +164,32 @@ roles to add coverage to a blind spot
 by Robert Bell, Thomas Ostrand, and Elaine Weyuker
 
 http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.281.7784&rep=rep1&type=pdf
+*** Different features stabilize at different rates
+"Change patterns suggest new modular boundaries"
+
+Consider a namespace with three functions.  Two of those functions
+depend on several other namespaces.  One function is self-contained.
+The namespace undergoes changes whenever the two dependent functions
+change and the self-contained function comes along for the ride.  A
+naive developer could accidentally change the self-contained function
+because they are looking at the namespace, when in fact they should
+only be concerned with changing the dependent functions.
+
+Or the example from the book:
+
+#+BEGIN_QUOTE
+[Code Maat's] =app.clj= module has changed several times, each time
+for different reasons.  It has three responsibilities, and therefore
+three reasons to change.  Refactoring this module into three
+independent ones would isolate the responsibilities and stabilize the
+code.
+#+END_QUOTE
+
+It may or may not stabilize the code, but at least it would allow the
+three refactored namespaces to evolve at rates consistent with the
+dependent namespaces for which they are responsible.
+*** Visualizing hibernate data
+#+BEGIN_SRC sh
+  python ~/projects/maat-scripts/transform/csv_as_enclosure_json.py --structure hib_lines.csv --weights hib_freqs.csv --weightcolumn 1 > hib_hotspot.json
+
+#+END_SRC
