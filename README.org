@@ -129,3 +129,38 @@ On my projects I choose the following timeframes
   open http://localhost:8888/hibernate/hibzoomable.html
 
 #+END_SRC
+*** Enclosure diagrams
+Uses /circle packing/ to represent the system.  Each circle is a
+module, from hibernate core all the way down to individual namespaces.
+*Circle radius* denotes the lines of code contained in the modules
+dependent on the module the circle represents.  *Color intensity* of
+the module denotes the number of revisions.
+
+It looks like directories are blue and =.java= files are red.
+*** Individual coding styles affect hotspots
+#+BEGIN_QUOTE
+A project's success depends on the coding skills of the people
+involved.  As humans we vary a lot in our capabilities.  A cognitively
+demanding task like programming amplifies those variations.  That's
+one reason why there's a large difference in quality between the code
+of different programmers, even on the same team.  Given these
+differences, it is hardly surprising that the expertise and coding
+techniques of individual developers make up one reason for clusters of
+hotspots.
+#+END_QUOTE
+*** Specialization
+If one developer is designing all the modules in one area then there
+will be hotspots in that area over a given time.  "This may be one
+reason why hotspots attract each other."
+*** Strategic decisions
+Running up deliberate technical debt to meet a deadline.
+*** Lack of knowledge
+There may be a lack of knowledge in the team that is working on this
+part of the codebase.
+
+There may be an opportunity to get training for the team or shuffle
+roles to add coverage to a blind spot
+*** Does measuring code change improve fault prediction?
+by Robert Bell, Thomas Ostrand, and Elaine Weyuker
+
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.281.7784&rep=rep1&type=pdf
