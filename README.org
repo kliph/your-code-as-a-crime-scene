@@ -148,13 +148,13 @@ differences, it is hardly surprising that the expertise and coding
 techniques of individual developers make up one reason for clusters of
 hotspots.
 #+END_QUOTE
-*** Specialization
+**** Specialization
 If one developer is designing all the modules in one area then there
 will be hotspots in that area over a given time.  "This may be one
 reason why hotspots attract each other."
-*** Strategic decisions
+**** Strategic decisions
 Running up deliberate technical debt to meet a deadline.
-*** Lack of knowledge
+**** Lack of knowledge
 There may be a lack of knowledge in the team that is working on this
 part of the codebase.
 
