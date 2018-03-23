@@ -137,7 +137,7 @@ dependent on the module the circle represents.  *Color intensity* of
 the module denotes the number of revisions.
 
 It looks like directories are blue and =.java= files are red.
-*** Individual coding styles affect hotspots
+*** Hotspots and individual coding styles
 #+BEGIN_QUOTE
 A project's success depends on the coding skills of the people
 involved.  As humans we vary a lot in our capabilities.  A cognitively
@@ -193,3 +193,9 @@ dependent namespaces for which they are responsible.
   python ~/projects/maat-scripts/transform/csv_as_enclosure_json.py --structure hib_lines.csv --weights hib_freqs.csv --weightcolumn 1 > hib_hotspot.json
 
 #+END_SRC
+*** Evolve your modules to stability as soon as possible
+See http://michaelfeathers.typepad.com/michael_feathers_blog/2012/12/the-active-set-of-classes.html
+- Graph time when a class is related to its last modification
+- Calculate /class closure/ as the time at which a class is no
+  longer modified
+** Chapter 5
